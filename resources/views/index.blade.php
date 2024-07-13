@@ -22,6 +22,13 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <form action="{{ route('blog.index') }}" class="input-group m-3" method="GET">
+                    @csrf
+                    <input type="text" name="q" class="form-control" value="{{ request('q') }}" placeholder="Search Something" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Search</button>
+                  </form>
+            </div>
             @if (session('status'))
                 <div class="alert alert-success">
                   <h3 class=" text-center">  {{ session('status') }}</h3>

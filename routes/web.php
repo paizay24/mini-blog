@@ -8,3 +8,4 @@ Route::redirect('/','/blog');
 Route::resource('/blog', BlogController::class);
 
 
+

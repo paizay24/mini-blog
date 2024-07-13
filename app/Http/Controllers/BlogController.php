@@ -13,9 +13,16 @@ class BlogController extends Controller
      */
     public function index()
     {
+        $posts = Blog::when(request('q'),function($query){
+            $q = request('q');
+            $query->where('title','like',"%$q%")
+                ->orWhere('description','like',"%$q%");
+
+        })->paginate(5)->withQueryString();
+
 
         return view('index',[
-            'posts' => Blog::paginate(5)
+            'posts' => $posts
         ]);
     }
 
