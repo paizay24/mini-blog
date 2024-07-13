@@ -11,10 +11,10 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <a class=" btn btn-secondary" href="{{ route('post.index') }}">Home</a>
+                                <a class=" btn btn-secondary" href="{{ route('blog.index') }}">Home</a>
                             </div>
                             <div>
-                                <a href="{{ route('post.create') }}" class="btn btn-primary">Create Post</a>
+                                <a href="{{ route('blog.create') }}" class="btn btn-primary">Create Post</a>
                             </div>
                         </div>
                     </div>

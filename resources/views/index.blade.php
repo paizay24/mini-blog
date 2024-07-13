@@ -16,7 +16,7 @@
                                 <h1>Home</h1>
                             </div>
                             <div>
-                                <a href="{{ route('post.create') }}" class="btn btn-primary">Create Post</a>
+                                <a href="{{ route('blog.create') }}" class="btn btn-primary">Create Post</a>
                             </div>
                         </div>
                     </div>
@@ -43,16 +43,16 @@
                         <div class=" card-footer">
                             <div class=" d-flex justify-content-between  align-items-center">
                                 <div>
-                                    <a href="{{ route('post.show', $post->id) }}" class=" btn btn-primary">See More...</a>
+                                    <a href="{{ route('blog.show', $post->id) }}" class=" btn btn-primary">See More...</a>
                                 </div>
                                 <div class=" d-flex ">
-                                    <form action="{{ route('post.delete', $post->id) }}" class=" d-block" method="POST">
+                                    <form action="{{ route('blog.destroy', $post->id) }}" class=" d-block" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class=" btn btn-danger">Delete</button>
                                     </form>
                                     <div>
-                                        <a href="{{ route('post.edit',$post->id) }}" class=" ms-2 btn  btn-primary">Edit</a>
+                                        <a href="{{ route('blog.edit',$post->id) }}" class=" ms-2 btn  btn-primary">Edit</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,5 +61,6 @@
                 </div>
             @endforeach
         </div>
+        <div class=" m-4 d-flex justify-content-center">{{ $posts->links() }}</div>
     </div>
 @endsection

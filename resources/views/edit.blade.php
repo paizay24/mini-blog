@@ -7,9 +7,9 @@
     <section class=" d-flex justify-content-center align-items-center">
 
         <div style="width: 50rem;">
-            <form action="{{ route('post.update', $post->id) }}" class=" form-control" method="POST">
+            <form action="{{ route('blog.update', $post->id) }}" class=" form-control" method="POST">
                 @csrf
-                @method('PUT')
+                @method('PATCH')
                 <div class="mb-3">
                     <label for="" class="form-label">Post Title</label>
                     <input type="text" value="{{ $post->title }}" name="title" class="form-control" placeholder="Post title">
